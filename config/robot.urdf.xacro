@@ -16,19 +16,19 @@
 
   <!-- LiDAR sensor frame - matches Gazebo sensor frame_id -->
   <!-- Co-located with unilidar_link (no offset) -->
-  <link name="/unilidar_lidar"></link>
+  <link name="unilidar_lidar"></link>
   <joint name="lidar_joint" type="fixed">
     <parent link="unilidar_link" />
-    <child link="/unilidar_lidar" />
+    <child link="unilidar_lidar" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
   <!-- IMU sensor frame - matches Gazebo sensor frame_id -->
   <!-- Co-located with LiDAR in the same sensor housing -->
-  <link name="/unilidar_imu"></link>
+  <link name="unilidar_imu"></link>
   <joint name="imu_joint" type="fixed">
     <parent link="unilidar_link" />
-    <child link="/unilidar_imu" />
+    <child link="unilidar_imu" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
