@@ -35,6 +35,13 @@ def generate_launch_description():
             output='screen'
             ),
         Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_world_to_map',
+            arguments=['0', '0', '0', '0', '0', '0', 'world', 'map'],
+            output='screen',
+        ),
+        Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
             name='robot_state_publisher',
