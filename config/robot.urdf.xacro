@@ -5,30 +5,30 @@
   <!-- Base link - root of the robot -->
   <link name="base_link"></link>
 
-  <!-- Unilidar sensor assembly link - matches Gazebo unilidar_link -->
+  <!-- GzLidar sensor assembly link - matches Gazebo gzlidar_link -->
   <!-- This represents the physical sensor housing containing both LiDAR and IMU -->
-  <link name="unilidar_link"></link>
-  <joint name="unilidar_joint" type="fixed">
+  <link name="lidar_link"></link>
+  <joint name="lidar_joint" type="fixed">
     <parent link="base_link" />
-    <child link="unilidar_link" />
+    <child link="lidar_link" />
     <origin xyz="0 0 0.065" rpy="0 0 0" />
   </joint>
 
   <!-- LiDAR sensor frame - matches Gazebo sensor frame_id -->
-  <!-- Co-located with unilidar_link (no offset) -->
-  <link name="unilidar_lidar"></link>
-  <joint name="lidar_joint" type="fixed">
-    <parent link="unilidar_link" />
-    <child link="unilidar_lidar" />
+  <!-- Co-located with lidar_link (no offset) -->
+  <link name="lidar_cloud"></link>
+  <joint name="lidar_cloud_joint" type="fixed">
+    <parent link="lidar_link" />
+    <child link="lidar_cloud" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
   <!-- IMU sensor frame - matches Gazebo sensor frame_id -->
   <!-- Co-located with LiDAR in the same sensor housing -->
-  <link name="unilidar_imu"></link>
-  <joint name="imu_joint" type="fixed">
-    <parent link="unilidar_link" />
-    <child link="unilidar_imu" />
+  <link name="lidar_imu"></link>
+  <joint name="lidar_imu_joint" type="fixed">
+    <parent link="lidar_link" />
+    <child link="lidar_imu" />
     <origin xyz="0 0 0" rpy="0 0 0" />
   </joint>
 
